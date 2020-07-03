@@ -22,7 +22,26 @@ echo Tail won $tailWon times
 
 if [ $headWon -eq $tailWon ]
 then
-     echo Tie
+     echo Its Tie so The Game To be Continued till another 3 Tosses
+     headWon=0
+     tailWon=0
+        while [ $headWon -le 2 -a $tailWon -le 2 ]
+        do
+           flip=$((RANDOM%2))
+           if [ $flip -eq $headWon ]
+           then
+                headWon=$(( headWon+1 ))
+           else
+                tailWon=$(( tailWon+1 ))
+           fi
+                if [ $headWon -gt $ $tailWon ]
+                then
+                        echo Head Won
+                else
+                        echo Tail Won
+                fi
+        done
+
 elif [ $headWon -gt $tailWon ]
 then
      echo Head Won
