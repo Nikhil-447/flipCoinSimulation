@@ -4,7 +4,7 @@ isHead=1
 isTail=0
 headWon=0
 tailWon=0
-for ((i=0;i<25;i++))
+while [ $headWon -lt 21 -a $tailWon -lt 21 ]
 do
 
    flip=$((RANDOM%2))
@@ -19,3 +19,13 @@ done
 
 echo Head Won $headWon times
 echo Tail won $tailWon times
+
+if [ $headWon -eq $tailWon ]
+then
+     echo Tie
+elif [ $headWon -gt $tailWon ]
+then
+     echo Head Won
+else
+    echo Tail Won
+fi
